@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <style name="splashtheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="HeaderBar" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
+    </style>
+
+    <style name="MapHeaderBar" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
+    </style>
+
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#80FFFFFF</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+
+    <style name="RippleStyleBlack" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989A</item>
+    </style>
+</resources>

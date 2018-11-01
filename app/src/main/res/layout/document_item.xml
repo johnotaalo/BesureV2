@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lyt_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/spacing_large">
+        <View
+            android:layout_width="@dimen/spacing_middle"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_insert_drive_file"/>
+        <View
+            android:layout_width="@dimen/spacing_middle"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/documentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample Text"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/RippleStyleBlack">
+    <LinearLayout
+        android:id="@+id/lyt_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:focusable="true">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:text="Pharmacy Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/textItemColor" />
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/textItemColor"
+                android:src="@drawable/ic_arrow_right" />
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_10" />
+    </LinearLayout>
+
+</com.balysv.materialripple.MaterialRippleLayout>

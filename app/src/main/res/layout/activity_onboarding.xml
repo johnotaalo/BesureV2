@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OnboardingActivity"
+    android:background="#ECD1FF"
+    android:padding="16dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:minHeight="100dp"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KNOW ABOUT HIV SELF TESTING"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/nunito" />
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_first_aid_box"
+            android:tint="@color/colorPrimary"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Get to know the importance of HIV Self Testing, the locations you can be able to get kits and advice on how to use the kits"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/nunito" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:id="@+id/start">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:text="LET'S START"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="12dp" />
+    </LinearLayout>
+</RelativeLayout>
