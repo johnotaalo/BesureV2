@@ -1,0 +1,136 @@
+package ke.co.besure.besure.fragment;
+
+import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ke.co.besure.besure.R;
+import ke.co.besure.besure.activity.GeneralWebView;
+import ke.co.besure.besure.adapter.VideoAdapter;
+import ke.co.besure.besure.model.Video;
+
+
+public class AdolescenceFragment extends Fragment implements View.OnClickListener {
+
+    CardView one2one, peerEducationBtn, auntJaneBtn;
+
+    public AdolescenceFragment() {
+    }
+
+    public static AdolescenceFragment newInstance() {
+        AdolescenceFragment fragment = new AdolescenceFragment();
+        return fragment;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_adolescence, container, false);
+
+        one2one = root.findViewById(R.id.one2one);
+        peerEducationBtn = root.findViewById(R.id.peerEducationBtn);
+        auntJaneBtn = root.findViewById(R.id.auntJaneBtn);
+
+        one2one.setOnClickListener(this);
+        peerEducationBtn.setOnClickListener(this);
+        auntJaneBtn.setOnClickListener(this);
+        return root;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.one2one:
+                showOne2OneDialog();
+                break;
+            case R.id.peerEducationBtn:
+                Intent intent = new Intent(getContext(), GeneralWebView.class);
+                String text = "<div class=\"note-editable\" contenteditable=\"true\" style=\"height: 300px;\"><p style=\"font-family: Arial, Helvetica, sans-serif; color: rgb(51, 51, 51); font-size: 14px;\"><span style=\"font-weight: 700;\">A peer</span>&nbsp;is someone who belongs to the same social group as another person, meaning that they share at least one important social or demographic characteristic such as age, education, occupation, or risk behavior.</p><h4 style=\"font-family: Arial, Helvetica, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">Peer Mentor Means?</span></h4><ul style=\"font-family: Arial, Helvetica, sans-serif; color: rgb(51, 51, 51);\"><li style=\"margin-left: 15px;\">Understanding what your Peers go through and knowing first hand where it pinches the most. (Living the Experience).</li><li style=\"margin-left: 15px;\">It also means being non judgmental no matter the situation.</li><li style=\"margin-left: 15px;\">Being a link/ bridge between the peers and the health care providers/service</li><li style=\"margin-left: 15px;\">Always using your story or past experience to encourage your fellow peers.</li><li style=\"margin-left: 15px;\">Being able to randomly motivate your fellow peers.</li></ul><div style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><font color=\"#333333\"><span style=\"font-size: 14px;\"><br></span></font></div><div style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">What is Peer Mentorship/ Education?</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is the process by which a well-trained and motivated individuals lead an organized educational and skills-building activities with their peers to support and improve young people’s health and well-being.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px;\"><br></p><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">Activities in peer mentorship</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px;\"><span style=\"font-weight: 700;\">Peer Mentorship</span>&nbsp;activities are participatory and generally take place over an extended period, as opposed to a one-time event. Venues for peer mentorship/ education include Schools, Health centers, parks, bars, social clubs, churches, work settings, and markets—any place where young people spend time together.</p><ul style=\"color: rgb(51, 51, 51); font-size: 14px;\"><li style=\"margin-left: 15px;\">Qualities should a good Peer Mentor Portray</li><li style=\"margin-left: 15px;\">Good listening skills</li><li style=\"margin-left: 15px;\">Caring and supportive</li><li style=\"margin-left: 15px;\">Confident</li><li style=\"margin-left: 15px;\">Reliable and available</li><li style=\"margin-left: 15px;\">Willing to invest the time and energy /share experience.</li><li style=\"margin-left: 15px;\">Demonstrate empathy but not sympathy</li><li style=\"margin-left: 15px;\">Serve as role model and source of trusted information</li><li style=\"margin-left: 15px;\">Good social skills, interpersonal and n communication</li></ul><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">Effective strategies of conducting Peer mentorship forums/ session.</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px;\"><li style=\"margin-left: 15px;\">Have Correct and Factual Information</li><li style=\"margin-left: 15px;\">Prepare adequate resources for conducting different activities.</li><li style=\"margin-left: 15px;\">Always reach out to your peers first.</li><li style=\"margin-left: 15px;\">Be creative and SMART</li></ul><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">Peer Mentorship can be delivered through??</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px;\"><li style=\"margin-left: 15px;\">One on one sessions</li><li style=\"margin-left: 15px;\">Facilitating group sessions</li><li style=\"margin-left: 15px;\">Establishing a connection or rapport with your fellow peers.</li><li style=\"margin-left: 15px;\">Organizing Community/Institution forums</li><li style=\"margin-left: 15px;\">Health talk sessions</li><li style=\"margin-left: 15px;\">Support group discussion</li></ul><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">Benefits of peer Mentorship/ education (Adamchak 2006) shows that this approach can:</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px;\"><li style=\"margin-left: 15px;\">Positively influence young people’s attitudes and knowledge about reproductive health and HIV</li><li style=\"margin-left: 15px;\">Influence youth to decrease their number of sexual partners and increase their use of condoms and other contraception</li><li style=\"margin-left: 15px;\">Reach groups of youth with education and health materials, such as brochures and condoms</li><li style=\"margin-left: 15px;\">Increase the use of sexual and reproductive health services by vulnerable young people</li><li style=\"margin-left: 15px;\">Improve community norms about youth and sexual behavior</li></ul><h4 style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">How to conduct An educative Fun day activity</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px;\"><li style=\"margin-left: 15px;\">Introduction – What to consider (Creating rapport, Make efforts of knowing at least each person</li><li style=\"margin-left: 15px;\">Engage the participants/ Make it fun and short</li><li style=\"margin-left: 15px;\">Disseminate and educate them as you proceed</li><li style=\"margin-left: 15px;\">User energizers in between the sessions</li><li style=\"margin-left: 15px;\">Emphasize on the theme</li><li style=\"margin-left: 15px;\">Acknowledge the host and let the close the session</li></ul><div><font color=\"#333333\"><span style=\"font-size: 14px;\"><br></span></font></div></div><div style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Counselling</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Is a person-to-person interaction, in which the peer provides adequate information to enable the client to understand his or her problem better in order to make an informed decision and act upon it.</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Value</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Is a belief that is important to an individual. Values can be influenced by religious, educational or cultural factors, as well as personal experiences.</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Attitude</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Is a view or opinion that is formed by values and beliefs&nbsp;<span style=\"font-weight: 700;\">(self esteem, hope, faith, confidence).</span></p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Interpersonal relationship</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Is the ability to get along with other people in order to achieve common goals.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">The principle of interpersonal relationship is: “seek first to understand, then be understood.” Deeply understand the problem. Build the skills of empathetic listening on the basis of openness and trust.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">There is an overlap between the two terms (values and attitudes) as someone’s personal attitudes or opinions may be based on the values that he or she holds.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">The way we express our attitudes, feelings, biases and values will affect how well we counsel our clients. For example, if we are judgmental in our private reaction to the way the client looks, his or her social class, religion or cultural factors, counselling will not be effective</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Qualities of a good peer counselor</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Peer providers who counsel young people must possess certain personal qualities, attitudes, knowledge and skills. The counselor should posses the following qualities:</p><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Enthusiasm to work with and help young people</li><li style=\"margin-left: 15px;\">Belief in the value of providing ASRH services</li><li style=\"margin-left: 15px;\">Respect young people and their rights to make decisions for themselves</li><li style=\"margin-left: 15px;\">Should be comfortable with expression of feelings</li><li style=\"margin-left: 15px;\">Aware of one’s values and limitations</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Qualities of a good peer counselor</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Unbiased attitudes towards different categories of young people</li><li style=\"margin-left: 15px;\">Tolerance for values that differ from one’s own</li><li style=\"margin-left: 15px;\">Empathy for young people</li><li style=\"margin-left: 15px;\">Supportive attitudes towards clients</li><li style=\"margin-left: 15px;\">Ability to maintain privacy and confidentiality</li><li style=\"margin-left: 15px;\">Good communication skills</li><li style=\"margin-left: 15px;\">Creates an atmosphere that is comfortable to the client</li><li style=\"margin-left: 15px;\">Presents information clearly</li><li style=\"margin-left: 15px;\">Encourages questions</li><li style=\"margin-left: 15px;\">Listens and observes attentively</li><li style=\"margin-left: 15px;\">Asks questions effectively to encourage the client to share information and feelings</li><li style=\"margin-left: 15px;\">Has knowledge about policies related to ASRH</li><li style=\"margin-left: 15px;\">Polite, neat, warm, presentable and knowledgeable</li><li style=\"margin-left: 15px;\">Should have patience</li><li style=\"margin-left: 15px;\">Trustworthy</li><li style=\"margin-left: 15px;\">Maintains confidentiality</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Counseling skills and techniques</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">There are many counseling skills that peer counselors need to apply during their practice to enable them be effective in helping their clients make informed choices.</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Note that young people are very sensitive</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Asking questions</li><li style=\"margin-left: 15px;\">Showing empathy</li><li style=\"margin-left: 15px;\">Clarifying, paraphrasing and reflecting</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Counseling skills and techniques</span></h4><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Active Listening</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Listening is not the same as hearing. It is not a natural process, but rather requires energy, skill and commitment.</li><li style=\"margin-left: 15px;\">Although listening is considered in many cultures to be passive and less important than speaking, active listening is a powerful tool because it can make the client feel important, acknowledged, and empowered.</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Active listening can be improved by:</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Maintaining eye contact</li><li style=\"margin-left: 15px;\">Demonstrating interest</li><li style=\"margin-left: 15px;\">Being attentive to the young person&nbsp;<span style=\"font-weight: 700;\">(e.g., not doing other tasks at the same time and not interrupting)</span></li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Effective questioning skills</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Open and closed ended questions are used to identify, clarify and break down the problem into component parts.</li><li style=\"margin-left: 15px;\">Closed-ended questions may be suitable to determine the young person’s condition and medical history at the beginning of counseling.</li><li style=\"margin-left: 15px;\">Closed-ended questions can be answered by yes, no, a number or a few words. They can be used at the beginning of counselling to break the ice, since they do not require the young person to reveal sensitive information or to share feelings. An example of a closed question is,&nbsp;<span style=\"font-weight: 700;\">\"How many girlfriends do you have?”</span></li><li style=\"margin-left: 15px;\">Open-ended questions are useful for exploring the opinions and feeling of young people and usually require longer responses. These questions are more effective in determining their needs in terms of information and what they already know.</li><li style=\"margin-left: 15px;\"><span style=\"font-weight: 700;\">Open-ended questions</span>&nbsp;have many possible Answers. They can be used to learn about the client’s feelings, thoughts, knowledge and beliefs. An example is,&nbsp;<span style=\"font-weight: 700;\">\"How does your partner feel about condoms?” Asking question that begin with “why” may be intimidating or seem judgmental. It is preferable to use phrases such as, “What are your reasons for…?”</span></li><li style=\"margin-left: 15px;\"><span style=\"font-weight: 700;\">Probing questions&nbsp;helps the counselor to clarify the young person’s responses to open questions. An example is, “Can you tell me how your friend’s experience has made you feel about abortion?”</span></li><li style=\"margin-left: 15px;\"><span style=\"font-weight: 700;\">Leading questions</span>lead the respondent in a certain direction and are not desirable in counselling situations.“Isn’t it normal for boys to have wet dreams?”</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Attending skills</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">SOLER&nbsp;</span>is an acronym used to describe the attending skills for the counsellor. Attending skills communicates to the clients that you are there for them.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">S – Sit squarely<br>O – Open posture<br>L – Lean forward<br>E – Eye contact<br>R – Relax<br></p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Reflection:</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Reflection is the echoing back of the last few words that the client has spoken.</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Challenging:</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Though challenging and confronting are not associated with counselling, there are times they are appropriate and even necessary.</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Paraphrasing</span></h4><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">The counsellor rephrases the content of the client’s message</p><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Purposes of Paraphrasing</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">To convey that you are understanding him/her</li><li style=\"margin-left: 15px;\">Help the client by simplifying, focusing and crystallizing what they said May encourage the client to elaborate</li><li style=\"margin-left: 15px;\">Provide a check on the accuracy of your perceptions</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">ROLES OF A PEER EDUCATOR</span></h4><h5 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">DEFINATION OF A PEER EDUCATOR</span></h5><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Peer educators are trained people who assist others in peer group [a group of people like themselves] to make informed decisions about life (social, sexuality, health, development).</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Peer education focuses on behavior and social change.</p><p style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">Examples of Peer Educators include:</p><span style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\">&nbsp;</span><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">A youth footballer who is discussing about substance abuse with fellow players.</li><li style=\"margin-left: 15px;\">A commercial sex worker is discussing treatment for STIs with other sex workers.</li><li style=\"margin-left: 15px;\">A woman is discussing about condoms with other women in her merry- go -round group, gives condom demonstration and has some for distribution.</li><li style=\"margin-left: 15px;\">A student who approaches her/his colleague to discuss about boy/girl relationships.</li><li style=\"margin-left: 15px;\">A young person who talks to a fellow youth about his/her fears about STIs.</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Tasks/Roles of a peer educator as follows:</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Hold one to one sessions with peers to discuss problems or life’s issues that they bring up</li><li style=\"margin-left: 15px;\">Refers peers to appropriate services e.g. drug abuse rehabilitation centers, VCT, Antenatal Care, contraception.</li><li style=\"margin-left: 15px;\">If sexually active youth, they may help access condoms.</li><li style=\"margin-left: 15px;\">Mobilize community groups for various activities, or actions e.g. World AIDS Day, Education Day, World Population Day, Environment Day etc.</li><li style=\"margin-left: 15px;\">Recruit/ Mobilize peers to discuss on various issues.</li><li style=\"margin-left: 15px;\">Organize activities (football, netball, drama etc.) to occupy the adolescence</li><li style=\"margin-left: 15px;\">Keep records on peer education activities.</li><li style=\"margin-left: 15px;\">Participate in supervision, monitoring and evaluation</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Qualities of good peer educators</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Popular and influential among peers</li><li style=\"margin-left: 15px;\">Concerned about the welfare of others</li><li style=\"margin-left: 15px;\">Able to listen actively</li><li style=\"margin-left: 15px;\">Self confident</li><li style=\"margin-left: 15px;\">Dependable and honest</li><li style=\"margin-left: 15px;\">Team-builder and leader.</li><li style=\"margin-left: 15px;\">Assertive</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Some challenges faced by peer educators:</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">Peer educators require extra time and commitment.</li><li style=\"margin-left: 15px;\">Maintaining motivation</li><li style=\"margin-left: 15px;\">Jealousy among peers</li><li style=\"margin-left: 15px;\">Some peer educators are engaging in risky behaviors</li><li style=\"margin-left: 15px;\">Lack of adequate knowledge and skills</li></ul><h4 style=\"color: rgb(51, 51, 51); background-color: rgb(255, 228, 181);\"><span style=\"font-weight: 700;\">Principle behind experiential learning:</span></h4><ul style=\"color: rgb(51, 51, 51); font-size: 14px; background-color: rgb(255, 228, 181);\"><li style=\"margin-left: 15px;\">What I hear, I forget,</li><li style=\"margin-left: 15px;\">What I hear and see, I remember a little.</li><li style=\"margin-left: 15px;\">What I hear I see and ask questions about or discuss with someone else, I begin to understand.</li><li style=\"margin-left: 15px;\">What I hear, see, discuss, and do allows me to acquire knowledge and skill.</li><li style=\"margin-left: 15px;\">What I teach to another, I master.</li></ul></div></div>";
+                intent.putExtra("content", text);
+                startActivity(intent);
+                break;
+            case R.id.auntJaneBtn:
+                showAuntyDialog();
+                break;
+        }
+    }
+
+    private void showOne2OneDialog(){
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.one2one_dialog);
+        dialog.setCancelable(true);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+
+        ((AppCompatImageButton) dialog.findViewById(R.id.bt_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        ((AppCompatButton) dialog.findViewById(R.id.callNow)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "1190"));
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
+
+    private void showAuntyDialog(){
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.dialog_aunty);
+        dialog.setCancelable(true);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+
+        ((AppCompatImageButton) dialog.findViewById(R.id.bt_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        ((AppCompatButton) dialog.findViewById(R.id.callNow)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "800 720 121"));
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
+}

@@ -4,11 +4,14 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -68,9 +71,15 @@ public class ReferralsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
         facilityRecyclerView = findViewById(R.id.facilityList);
-        facilityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        facilityRecyclerView.setLayoutManager(layoutManager);
         facilityRecyclerView.setHasFixedSize(true);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(facilityRecyclerView.getContext(),
+                layoutManager.getOrientation());
+        facilityRecyclerView.addItemDecoration(dividerItemDecoration);
 
         adapter = new FacilityAdapter(this, facilities);
         facilityRecyclerView.setAdapter(adapter);
@@ -85,12 +94,14 @@ public class ReferralsActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new FacilityAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Facility obj, int position) {
-                Intent intent = new Intent(ReferralsActivity.this, ReferralMapsActivity.class);
-                intent.putExtra("facility_name", obj.getFacility_name());
-                intent.putExtra("nearest_town", obj.getNearest_town());
-                intent.putExtra("longitude", obj.getLongitude());
-                intent.putExtra("latitude", obj.getLatitude());
-                startActivity(intent);
+//                Intent intent = new Intent(ReferralsActivity.this, ReferralMapsActivity.class);
+//                intent.putExtra("facility_name", obj.getFacility_name());
+//                intent.putExtra("nearest_town", obj.getNearest_town());
+//                intent.putExtra("longitude", obj.getLongitude());
+//                intent.putExtra("latitude", obj.getLatitude());
+//                startActivity(intent);
+
+                showFacilityDialog(obj);
             }
         });
     }
@@ -117,6 +128,41 @@ public class ReferralsActivity extends AppCompatActivity {
             }
         });
         builder.show();
+    }
+
+    private void showFacilityDialog(final Facility facility){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.facility_dialog);
+        dialog.setCancelable(true);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        ((TextView) dialog.findViewById(R.id.facilityName)).setText(facility.getFacility_name());
+        ((TextView) dialog.findViewById(R.id.facilityNearestTown)).setText((!facility.getNearest_town().isEmpty()) ? facility.getNearest_town() : "N/A");
+
+
+        ((AppCompatImageButton) dialog.findViewById(R.id.bt_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        ((AppCompatButton) dialog.findViewById(R.id.getDirections)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = "geo:0,0?q=" + facility.getLatitude() + "," + facility.getLongitude() + "("+facility.getFacility_name()+")";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
     }
 
     private String[] getCounties(){

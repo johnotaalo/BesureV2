@@ -36,11 +36,13 @@ public class PharmacyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
         public View lyt_parent;
+        public TextView subcounty;
 
         public OriginalViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
             lyt_parent = v.findViewById(R.id.lyt_parent);
+            subcounty = v.findViewById(R.id.subcounty);
         }
     }
     @NonNull
@@ -59,6 +61,7 @@ public class PharmacyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             Pharmacy p = items.get(position);
             view.name.setText(p.getPharmacy_name());
+            view.subcounty.setVisibility(View.GONE);
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

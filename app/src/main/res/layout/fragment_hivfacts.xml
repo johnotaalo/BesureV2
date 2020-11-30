@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HIVFactsFragment">
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_middle"
+        app:rowCount="4"
+        app:alignmentMode="alignMargins"
+        app:columnOrderPreserved="false"
+        app:columnCount="2">
+        <android.support.v7.widget.CardView
+            android:id="@+id/testingBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/testingTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/testingTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="TESTING"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/disclosureBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/disclosureText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/disclosureText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="DISCLOSURE"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/treatmentBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/treatmentText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/treatmentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="TREATMENT"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/preventionBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/preventionText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/preventionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="PREVENTION"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/hivTb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/hivTbText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/hivTbText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="HIV AND TB"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/hivFamilyBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/hivFamilyText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/hivFamilyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="HIV AND FAMILY"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/supportGroupsBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/supportGroupsTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/supportGroupsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:text="SUPPORT GROUPS"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.v7.widget.GridLayout>
+</FrameLayout>

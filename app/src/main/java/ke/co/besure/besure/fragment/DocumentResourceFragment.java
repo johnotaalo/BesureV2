@@ -38,6 +38,11 @@ public class DocumentResourceFragment extends Fragment {
         documentList.add(new Document("Facts about HIV Self Test", "https://trello-attachments.s3.amazonaws.com/5aed80731d22b3f274caf5a6/5baefac11076a239044ecba9/2b58814b229347c53883d6c47605d452/Facts_about_HIVST.pptx"));
         documentList.add(new Document("Insti Kit Instructions", "https://trello-attachments.s3.amazonaws.com/5aed80731d22b3f274caf5a6/5baefac11076a239044ecba9/fdebc6c26a16930080c5dba535baeef3/insti_kits_instructions.pdf"));
         documentList.add(new Document("PrEP Booklet 2017", "https://trello-attachments.s3.amazonaws.com/5aed80731d22b3f274caf5a6/5baefac11076a239044ecba9/290b1e126f164e4ce42ab58f81a45ac6/PrEP_BOOKLET_2017_REVISED.pdf"));
+        documentList.add(new Document("HTS Guideline 2015", "https://drive.google.com/open?id=1_Dr7o8Lkt8Lw5z2oJZR9yKXUEQUx2RwQ"));
+        documentList.add(new Document("HTS Testing Algorithm", "https://drive.google.com/open?id=1G-9SVuIrrStPfsHgodLCqj1xOjTNRfhe"));
+        documentList.add(new Document("Kenya ARV Guideline", "https://drive.google.com/open?id=1rmaMVOosAYsqHeqkt2JtP6mxyehvWllq"));
+        documentList.add(new Document("Kenya HIV Self Testing and Assisted Partner Notification Services", "https://drive.google.com/open?id=1javRP7cLZ1S4PWtDpun8nSQ75OB2SWm1"));
+        documentList.add(new Document("NASCOP Self Test Bronchure June 2018", "https://drive.google.com/open?id=1qQw5XWJaFUJMnEzqzrfyExsflbHhPHZj"));
 
         RecyclerView documentRecyclerView = root.findViewById(R.id.documentList);
 

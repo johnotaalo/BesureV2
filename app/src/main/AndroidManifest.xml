@@ -3,6 +3,8 @@
     package="ke.co.besure.besure">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -29,6 +31,18 @@
             android:authorities="ke.co.besure.provider"
             android:exported="false"
             android:label="FAQs"
+            android:syncable="true" />
+        <provider
+            android:name=".provider.HIVFactProvider"
+            android:authorities="ke.co.besure.provider.hivfact"
+            android:exported="false"
+            android:label="HIV Facts"
+            android:syncable="true" />
+        <provider
+            android:name=".provider.ReproHealthProvider"
+            android:authorities="ke.co.besure.provider.reprohealth"
+            android:exported="false"
+            android:label="Reproductive Health"
             android:syncable="true" />
 
         <activity
@@ -110,12 +124,42 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
-        <activity android:name=".activity.ResourcesActivity"
+        <activity
+            android:name=".activity.ResourcesActivity"
             android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
+        <activity
+            android:name=".activity.ReportProblemActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.HealthLivingActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.HIVFactActivity"
+            android:parentActivityName=".activity.ResourcesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ResourcesActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ReproHealthActivity"
+            android:parentActivityName=".activity.ResourcesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ResourcesActivity" />
+        </activity>
+        <activity android:name=".activity.GeneralWebView"></activity>
     </application>
 
 </manifest>

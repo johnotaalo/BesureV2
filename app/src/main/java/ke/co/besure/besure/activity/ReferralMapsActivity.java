@@ -87,13 +87,13 @@ public class ReferralMapsActivity extends AppCompatActivity implements OnMapRead
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        boolean success = mMap.setMapStyle(
-                MapStyleOptions.loadRawResourceStyle(
-                        this, R.raw.style_json));
-
-        if (!success) {
-            Log.e("FacilityMap", "Style parsing failed.");
-        }
+//        boolean success = mMap.setMapStyle(
+//                MapStyleOptions.loadRawResourceStyle(
+//                        this, R.raw.style_json));
+//
+//        if (!success) {
+//            Log.e("FacilityMap", "Style parsing failed.");
+//        }
 
         // Add a marker in Sydney and move the camera
         LatLng facility = new LatLng(Float.parseFloat(latitude), Float.parseFloat(longitude));

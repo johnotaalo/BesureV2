@@ -33,12 +33,14 @@ public class FacilityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
+        public TextView subcounty;
         public View lyt_parent;
 
         public OriginalViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
             lyt_parent = v.findViewById(R.id.lyt_parent);
+            subcounty = v.findViewById(R.id.subcounty);
         }
     }
 
@@ -58,6 +60,11 @@ public class FacilityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             Facility f = items.get(position);
             view.name.setText(f.getFacility_name());
+            if (f.getSubcounty() != null && !f.getSubcounty().isEmpty()) {
+                view.subcounty.setText(f.getSubcounty());
+            }else{
+                view.subcounty.setVisibility(View.GONE);
+            }
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

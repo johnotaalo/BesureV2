@@ -6,7 +6,7 @@ package ke.co.besure.besure.model;
 
 public class Facility {
     private int id;
-    private String facility_name, facility_code, longitude, latitude, county_name, description, nearest_town;
+    private String facility_name, facility_code, longitude, latitude, county_name, description, nearest_town, subcounty;
 
     public int getId() {
         return id;
@@ -70,5 +70,13 @@ public class Facility {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSubcounty() {
+        return subcounty;
+    }
+
+    public void setSubcounty(String subcounty) {
+        this.subcounty = subcounty;
     }
 }

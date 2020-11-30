@@ -17,13 +17,19 @@ import ke.co.besure.besure.R;
 import ke.co.besure.besure.helper.RetrofitHelper;
 import ke.co.besure.besure.model.County;
 import ke.co.besure.besure.model.FAQ;
+import ke.co.besure.besure.model.HIVFact;
 import ke.co.besure.besure.model.Pharmacy;
+import ke.co.besure.besure.model.ReproHealthResource;
 import ke.co.besure.besure.provider.FAQProvider;
+import ke.co.besure.besure.provider.HIVFactProvider;
 import ke.co.besure.besure.provider.PharmacyProvider;
+import ke.co.besure.besure.provider.ReproHealthProvider;
 import ke.co.besure.besure.server.service.CountyService;
 import ke.co.besure.besure.server.service.FAQService;
 import ke.co.besure.besure.server.service.FacilityService;
+import ke.co.besure.besure.server.service.HIVFactsService;
 import ke.co.besure.besure.server.service.PharmacyService;
+import ke.co.besure.besure.server.service.ReproHealthService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
         mContentResolver = this.getContentResolver();
 
         db = new DB(this);
-//        db.clearDatabase();
+        db.clearDatabase();
 
         Log.d("Download", "Counties: " + db.getAllCounties().size());
         if (db.getAllCounties().size() > 0) {
@@ -57,6 +63,8 @@ public class SplashActivity extends AppCompatActivity {
     public void downloadData(){
         new getContent().execute();
         downloadFAQs();
+        downloadHIVFacts();
+        downloadReproductiveHealth();
         Retrofit retrofit = RetrofitHelper.getInstance().createHelper();
 
         PharmacyService pharmacyService = retrofit.create(PharmacyService.class);
@@ -121,6 +129,72 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<FAQ>> call, Throwable t) {
                 Log.e("Download", t.getMessage());
+            }
+        });
+    }
+
+    public void downloadHIVFacts(){
+        Retrofit retrofit = RetrofitHelper.getInstance().createHelper();
+        HIVFactsService hivFactsService = retrofit.create(HIVFactsService.class);
+        Call<List<HIVFact>> factsCall = hivFactsService.get();
+
+        factsCall.enqueue(new Callback<List<HIVFact>>() {
+            @Override
+            public void onResponse(Call<List<HIVFact>> call, Response<List<HIVFact>> response) {
+                List<HIVFact> facts = response.body();
+
+                if (facts.size() > 0){
+                    mContentResolver.delete(HIVFactProvider.CONTENT_URI, null, null);
+
+                    for (HIVFact fact:
+                         facts) {
+                        ContentValues contentValues = new ContentValues();
+
+                        contentValues.put(DB.ID, fact.getId());
+                        contentValues.put(DB.SECTION_COLUMN, fact.getSection());
+                        contentValues.put(DB.CONTENT_COLUMN, fact.getContent());
+
+                        mContentResolver.insert(HIVFactProvider.CONTENT_URI, contentValues);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<HIVFact>> call, Throwable t) {
+                Log.e("DownloadHIVFacts", t.getMessage());
+            }
+        });
+    }
+
+    public void downloadReproductiveHealth(){
+        Retrofit retrofit = RetrofitHelper.getInstance().createHelper();
+        ReproHealthService reproHealthService = retrofit.create(ReproHealthService.class);
+        Call<List<ReproHealthResource>> factsCall = reproHealthService.get();
+
+        factsCall.enqueue(new Callback<List<ReproHealthResource>>() {
+            @Override
+            public void onResponse(Call<List<ReproHealthResource>> call, Response<List<ReproHealthResource>> response) {
+                List<ReproHealthResource> facts = response.body();
+
+                if (facts.size() > 0){
+                    mContentResolver.delete(ReproHealthProvider.CONTENT_URI, null, null);
+
+                    for (ReproHealthResource fact:
+                            facts) {
+                        ContentValues contentValues = new ContentValues();
+
+                        contentValues.put(DB.ID, fact.getId());
+                        contentValues.put(DB.SECTION_COLUMN, fact.getSection());
+                        contentValues.put(DB.CONTENT_COLUMN, fact.getContent());
+
+                        mContentResolver.insert(ReproHealthProvider.CONTENT_URI, contentValues);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ReproHealthResource>> call, Throwable t) {
+                Log.e("DownloadHIVFacts", t.getMessage());
             }
         });
     }

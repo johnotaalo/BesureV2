@@ -14,7 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ke.co.besure.besure.R;
+import ke.co.besure.besure.fragment.AdolescenceFragment;
 import ke.co.besure.besure.fragment.DocumentResourceFragment;
+import ke.co.besure.besure.fragment.HIVFactsFragment;
+import ke.co.besure.besure.fragment.ReproductiveHealthFragment;
 import ke.co.besure.besure.fragment.VideoResourceFragment;
 
 public class ResourcesActivity extends AppCompatActivity {
@@ -56,7 +59,10 @@ public class ResourcesActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(VideoResourceFragment.newInstance(), "VIDEOS");
+        adapter.addFragment(HIVFactsFragment.newInstance(), "HIV FACTS");
+        adapter.addFragment(ReproductiveHealthFragment.newInstance(), "REPRODUCTIVE HEALTH");
+        adapter.addFragment(AdolescenceFragment.newInstance(), "ADOLESCENTS");
+        adapter.addFragment(VideoResourceFragment.newInstance(), "MEDIA");
         adapter.addFragment(DocumentResourceFragment.newInstance(), "DOCUMENTS");
 //        adapter.addFragment(VideoResourceFragment.newInstance(), "AUDIO");
         viewPager.setAdapter(adapter);

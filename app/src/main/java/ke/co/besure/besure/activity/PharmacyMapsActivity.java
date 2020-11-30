@@ -63,13 +63,13 @@ public class PharmacyMapsActivity extends AppCompatActivity implements OnMapRead
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        boolean success = mMap.setMapStyle(
-                MapStyleOptions.loadRawResourceStyle(
-                        this, R.raw.style_json));
-
-        if (!success) {
-            Log.e("PharmacyMap", "Style parsing failed.");
-        }
+//        boolean success = mMap.setMapStyle(
+//                MapStyleOptions.loadRawResourceStyle(
+//                        this, R.raw.style_json));
+//
+//        if (!success) {
+//            Log.e("PharmacyMap", "Style parsing failed.");
+//        }
 
         // Add a marker in Sydney and move the camera
         LatLng pharm = new LatLng(Float.parseFloat(pharmacy.getPharmacy_latitude()), Float.parseFloat(pharmacy.getPharmacy_longitude()));

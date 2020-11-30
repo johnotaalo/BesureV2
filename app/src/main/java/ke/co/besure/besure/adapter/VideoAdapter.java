@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import ke.co.besure.besure.R;
@@ -32,6 +34,7 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         public OriginalViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.videoTitle);
+            imgVideoImage = v.findViewById(R.id.videoimage);
             lyt_parent = v.findViewById(R.id.lyt_parent);
         }
     }
@@ -52,6 +55,10 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
             Video v = items.get(position);
             view.name.setText(v.getTitle());
+
+            Glide.with(ctx)
+                    .load(String.format("https://img.youtube.com/vi/%s/0.jpg", v.getUrl()))
+                    .into(view.imgVideoImage);
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

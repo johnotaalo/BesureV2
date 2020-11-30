@@ -39,6 +39,144 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="Steps"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/grey_90" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/steps"/>
+
+            <LinearLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_margin="@dimen/spacing_middle"
+                >
+                <LinearLayout
+                    android:id="@+id/lyt_what_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:minHeight="?attr/actionBarSize"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="@dimen/spacing_large"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="8dp"
+                        android:background="@drawable/shape_circle"
+                        android:tint="@color/colorPrimary"
+                        android:src="@drawable/ic_arrow_forward" />
+                    <View
+                        android:layout_width="@dimen/spacing_large"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="What Next?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/grey_80" />
+
+                    <View
+                        android:layout_width="@dimen/spacing_large"
+                        android:layout_height="wrap_content" />
+                    <ImageButton
+                        android:id="@+id/bt_expand"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/grey_60"
+                        android:src="@drawable/ic_expand_arrow"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lyt_expand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_3"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A Negative Result"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_small" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="As with many tests, there is a chance for false results. To reduce the chance of false results, be sure to follow the instructions and use the test correctly. If you have a negative result but you were involved in an HIV-risk activity in the past 3 months, you could be in what is called the “window period” and it is recommended to repeat testing at a later date."/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_middle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A Positive Result"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_small" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Consult a doctor as soon as possible and inform him/her that you have performed a self test for HIV. All positive results must be confirmed by a laboratory test."/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_middle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="What Next After A Positive Result?"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_small" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Having HIV does not mean you have AIDS. With early diagnosis and treatment, it is unlikely that you will develop AIDS."/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/spacing_large"
+                android:paddingRight="@dimen/spacing_large">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Videos"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                     android:textColor="@color/grey_90" />
@@ -52,12 +190,15 @@
                 android:visibility="visible">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/video1"
+                    android:id="@+id/instiVideo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_medium"
                     app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="2dp"
+                    android:visibility="gone"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -65,7 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/image_1"
+                            android:id="@+id/instiImage"
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:background="@color/grey_40"
@@ -113,12 +254,15 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/video2"
+                    android:id="@+id/oraquickEnglish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_medium"
                     app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="2dp"
+                    android:visibility="gone"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -126,7 +270,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/image_2"
+                            android:id="@+id/oraquickEnglishImage"
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:background="@color/grey_40"
@@ -174,12 +318,15 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/video3"
+                    android:id="@+id/oraquickSwahili"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_medium"
                     app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="2dp"
+                    android:visibility="gone"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -187,7 +334,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/image_3"
+                            android:id="@+id/oraquickSwahiliImage"
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:background="@color/grey_40"

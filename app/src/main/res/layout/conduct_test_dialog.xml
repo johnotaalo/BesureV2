@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/bt_close"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/grey_20"
+            android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_middle"
+        android:text="AVAILABLE KITS"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textAlignment="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_large">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/insti"
+                android:src="@drawable/ic_drop_of_water"
+                android:padding="@dimen/spacing_large"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_large" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INSTI KIT"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Blood based"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_large" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/readmoreInsti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Read More"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_rounded_primary"/>
+        </LinearLayout>
+        <View
+            android:layout_width="@dimen/spacing_middle"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/oraquick"
+                android:src="@drawable/ic_drop_of_water"
+                android:padding="@dimen/spacing_large"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_large" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ORAQUICK"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Oral based"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_large" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/readmoreOraquick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Read More"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_rounded_primary"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

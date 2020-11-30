@@ -20,25 +20,45 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="KNOW ABOUT HIV SELF TESTING"
+            android:text="BE SURE"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="24dp"
             android:textStyle="bold"
-            app:fontFamily="@font/nunito" />
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:src="@drawable/ic_first_aid_box"
-            android:tint="@color/colorPrimary"
-            android:layout_gravity="center"/>
+            app:fontFamily="@font/nunito_semibold" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp">
+            <LinearLayout
+                android:id="@+id/progressLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <ProgressBar
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please Wait..."/>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/posterImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/white"/>
+        </FrameLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:text="Get to know the importance of HIV Self Testing, the locations you can be able to get kits and advice on how to use the kits"
+            android:text="Know more about HIV, transmission, prevention, treatment and healthy living"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="16dp"

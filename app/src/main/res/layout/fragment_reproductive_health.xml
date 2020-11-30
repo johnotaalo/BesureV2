@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ReproductiveHealthFragment">
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_middle"
+        app:rowCount="3"
+        app:alignmentMode="alignMargins"
+        app:columnOrderPreserved="false"
+        app:columnCount="2">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/anatomyPhysiologyBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/anatomyPhysiologyText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/anatomyPhysiologyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Anatomy and Physiology"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+        android:id="@+id/familyPlanningBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1">
+        <RelativeLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/hiv_facts_icon_size"
+                android:layout_height="@dimen/hiv_facts_icon_size"
+                android:layout_above="@+id/familyPlanningTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/shape_circle"
+                android:padding="10dp"
+                android:src="@drawable/ic_hiv"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/familyPlanningTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Family Planning and Contraceptives"
+                android:maxLines="2"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_semibold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/sexSexualityBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/sexSexualityTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/sexSexualityTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Sex and Sexuality"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/tennagePregnancyBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/teenagePregnancyTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/teenagePregnancyTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Teenage Pregnancy"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/sexualConcentBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/sexualConcentTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/sexualConcentTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Sexual Concent"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/genderViolenceBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/hiv_facts_icon_size"
+                    android:layout_height="@dimen/hiv_facts_icon_size"
+                    android:layout_above="@+id/genderViolenceTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/shape_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hiv"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/genderViolenceTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Gender Based Violence"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito_semibold" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </android.support.v7.widget.GridLayout>
+
+</FrameLayout>

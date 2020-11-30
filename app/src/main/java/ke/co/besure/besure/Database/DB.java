@@ -11,7 +11,7 @@ import java.util.List;
 import ke.co.besure.besure.model.County;
 
 public class DB extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     private static final String DATABASE_NAME = "besure";
 
@@ -83,6 +83,15 @@ public class DB extends SQLiteOpenHelper {
     public static final String CONDUCTING_TEST_TITLE = "title";
     public static final String CONDUCTING_TEST_ID = "id";
 
+    // HIV Facts table
+    public static final String HIVFACTS_TABLE_NAME = "hiv_facts";
+
+    public static final String ID = "id";
+    public static final String SECTION_COLUMN = "section";
+    public static final String CONTENT_COLUMN = "content";
+
+    public static final String REPRODUCTIVE_HEALTH_TABLE_NAME = "reproductive_health";
+
     public DB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -149,6 +158,18 @@ public class DB extends SQLiteOpenHelper {
                 + CONDUCTING_TEST_TITLE + " TEXT"
                 + ")";
 
+        String CREATE_HIV_FACTS_TABLE = "CREATE TABLE " + HIVFACTS_TABLE_NAME + "("
+                + ID + " INTEGER PRIMARY KEY,"
+                + SECTION_COLUMN + " TEXT,"
+                + CONTENT_COLUMN + " TEXT"
+                + ");";
+
+        String CREATE_REPRODUCTIVE_HEALTH_TABLE = "CREATE TABLE " + REPRODUCTIVE_HEALTH_TABLE_NAME + "("
+                + ID + " INTEGER PRIMARY KEY,"
+                + SECTION_COLUMN + " TEXT,"
+                + CONTENT_COLUMN + " TEXT"
+                + ");";
+
         db.execSQL(CREATE_COUNTY_TABLE);
         db.execSQL(CREATE_FACILITY_TABLE);
         db.execSQL(CREATE_PHARMACY_TABLE);
@@ -157,6 +178,8 @@ public class DB extends SQLiteOpenHelper {
         db.execSQL(CREATE_AUDIOS_TABLE);
         db.execSQL(CREATE_VIDEOS_TABLE);
         db.execSQL(CREATE_CONDUCTING_TEST_TABLE);
+        db.execSQL(CREATE_HIV_FACTS_TABLE);
+        db.execSQL(CREATE_REPRODUCTIVE_HEALTH_TABLE);
     }
 
     @Override
@@ -169,6 +192,8 @@ public class DB extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + VIDEOS_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + AUDIOS_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + CONDUCTING_TEST_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + REPRODUCTIVE_HEALTH_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + HIVFACTS_TABLE_NAME);
 
         onCreate(db);
     }
@@ -183,6 +208,8 @@ public class DB extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + VIDEOS_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + AUDIOS_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + CONDUCTING_TEST_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + REPRODUCTIVE_HEALTH_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + HIVFACTS_TABLE_NAME);
 
         onCreate(db);
     }
